@@ -15466,7 +15466,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -15475,6 +15475,116 @@ TextureImporter:
       bones: []
       spriteID: 67d2912a261a0470a947981e5f4d270f
       internalID: 2112309515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundTileset_253
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 272
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f82b3dc104e94351894ed582505cb03
+      internalID: -1357770373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundTileset_254
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 256
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c50b2f6ad72364887bbcd3142f57f8a2
+      internalID: 945357648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundTileset_286
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 240
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 469f8c0a452b24aac85c2fcf6a6b5de4
+      internalID: 1059959546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundTileset_287
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 224
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 389ba344844d945dfad6437257e62db8
+      internalID: -2108011415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundTileset_374
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 256
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 406c50b062053443f861c78bf4b893fb
+      internalID: -1330877714
       vertices: []
       indices: 
       edges: []
@@ -15665,6 +15775,8 @@ TextureImporter:
       GroundTileset_250: 4922336172687660928
       GroundTileset_251: -8500263058321468467
       GroundTileset_252: 230801382614120315
+      GroundTileset_253: -1357770373
+      GroundTileset_254: 945357648
       GroundTileset_255: 3600325289379634990
       GroundTileset_256: 8794083124067141061
       GroundTileset_257: 4833572738669163263
@@ -15699,6 +15811,8 @@ TextureImporter:
       GroundTileset_283: -1628919394428919849
       GroundTileset_284: -6293286483985046773
       GroundTileset_285: -2019204962966776265
+      GroundTileset_286: 1059959546
+      GroundTileset_287: -2108011415
       GroundTileset_288: 6457832312849286002
       GroundTileset_289: 553536830516087471
       GroundTileset_29: 2784625893281395544
@@ -15795,6 +15909,7 @@ TextureImporter:
       GroundTileset_371: -5195279801608438928
       GroundTileset_372: 8976529817890550001
       GroundTileset_373: -538571656026353694
+      GroundTileset_374: -1330877714
       GroundTileset_378: 165981016623496382
       GroundTileset_379: -8506950997750824923
       GroundTileset_38: 7149301066232200026
