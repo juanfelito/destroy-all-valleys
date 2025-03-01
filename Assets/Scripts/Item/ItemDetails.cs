@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [System.Serializable]
-public class ItemDetail {
+public class ItemDetails {
     public int itemCode;
     public ItemType itemType;
     public string itemDescription;
