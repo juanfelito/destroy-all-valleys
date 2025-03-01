@@ -349,9 +349,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.6829268
-    width: 0.13341203
-    height: 0.1937881
+    y: 0.6834478
+    width: 0.13345143
+    height: 0.19393593
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 34
@@ -541,6 +541,7 @@ GameObject:
   - component: {fileID: 2322423278840355547}
   - component: {fileID: 9196841149989439841}
   - component: {fileID: 9196841149989439842}
+  - component: {fileID: 9196841149989439843}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1531,6 +1532,18 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.96, y: 0.13}
   m_EdgeRadius: 0
+--- !u!114 &9196841149989439843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 611013787520782787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d3aec360ef3e4e188116e236da97db8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
