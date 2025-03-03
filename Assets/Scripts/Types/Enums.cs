@@ -11,6 +11,11 @@ public enum Direction {
     none
 }
 
+public enum Rotation {
+    Clockwise,
+    Anticlockwise
+}
+
 public enum ItemType {
     Seed,
     Commodity,
@@ -23,5 +28,11 @@ public enum ItemType {
     Reapable_scenery,
     Furniture,
     none,
+    count
+}
+
+public enum InventoryLocation {
+    player,
+    chest,
     count
 }
