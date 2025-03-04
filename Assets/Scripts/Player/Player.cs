@@ -5,6 +5,8 @@ public class Player : SingletonMonoBehaviour<Player>
     // Movement Parameters
     private MovementParameters movementParameters = new MovementParameters{ toolEffect = ToolEffect.none };
 
+    private Camera mainCamera;
+
     private Rigidbody2D rigidbody2D;
 #pragma warning disable 414
     private Direction playerDirection;
@@ -20,6 +22,7 @@ public class Player : SingletonMonoBehaviour<Player>
         base.Awake();
 
         rigidbody2D = GetComponent<Rigidbody2D>();
+        mainCamera = Camera.main;
     }
 
     private void Update()
@@ -98,5 +101,9 @@ public class Player : SingletonMonoBehaviour<Player>
 
             movementSpeed = Settings.walkingSpeed;
         }
+    }
+
+    public Vector3 GetPlayerViewportPosition() {
+        return mainCamera.WorldToViewportPoint(transform.position);
     }
 }
