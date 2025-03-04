@@ -8,4 +8,5 @@ public class InventorySlot : MonoBehaviour {
     public TextMeshProUGUI textMeshProUGUI;
 
     [HideInInspector] public ItemDetails itemDetails;
+    [HideInInspector] public int itemQuantity;
 }

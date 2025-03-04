@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.Unity.VisualStudio.Editor;
 using TMPro;
 using UnityEngine;
 
@@ -30,12 +31,17 @@ public class InventoryBar : MonoBehaviour {
     private void InventoryUpdated(InventoryLocation inventoryLocation, List<InventoryItem> list) {
         if (inventoryLocation == InventoryLocation.player) {
             for (int i = 0; i < slots.Length; i++) {
-                if (i + 1<= list.Count) {
+                if (i < list.Count) {
                     ItemDetails details = InventoryManager.Instance.GetItemDetail(list[i].itemCode);
                     slots[i].image.sprite = details.itemSprite;
                     slots[i].textMeshProUGUI.text = list[i].itemQuantity.ToString();
+                    slots[i].itemDetails = details;
+                    slots[i].itemQuantity = list[i].itemQuantity;
                 } else {
                     slots[i].image.sprite = blank16x16Sprite;
+                    slots[i].textMeshProUGUI.text = "";
+                    slots[i].itemDetails = null;
+                    slots[i].itemQuantity = 0;
                 }
             }
         }
