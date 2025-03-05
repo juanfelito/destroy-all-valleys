@@ -71,17 +71,36 @@ public class InventoryManager : SingletonMonoBehaviour<InventoryManager> {
             inventoryList.Add(itemToStore);
         }
 
-        DebugPrintInventoryList(inventoryList);
+        // DebugPrintInventoryList(inventoryList);
 
         EventHandler.CallInventoryUpdatedEvent(inventoryLocation, inventoryList);
     }
 
-    private void DebugPrintInventoryList(List<InventoryItem> inventoryList) {
-        foreach (var inventoryItem in inventoryList) {
-            Debug.Log("Item description: " + Instance.GetItemDetail(inventoryItem.itemCode).itemDescription + " Item quantity: " + inventoryItem.itemQuantity);
+    public void RemoveItem(InventoryLocation inventoryLocation, int itemCode) {
+        List<InventoryItem> inventoryList = inventoryLists[(int)inventoryLocation];
+
+        int index = inventoryList.FindIndex(x => x.itemCode == itemCode);
+
+        if (index != -1) {
+            InventoryItem storedItem = inventoryList[index];
+            storedItem.itemQuantity -= 1;
+
+            if (storedItem.itemQuantity == 0) {
+                inventoryList.RemoveAt(index);
+            } else {
+                inventoryList[index] = storedItem;
+            }
         }
-        Debug.Log("*********************************************************************");
+
+        EventHandler.CallInventoryUpdatedEvent(inventoryLocation, inventoryList);
     }
+
+    // private void DebugPrintInventoryList(List<InventoryItem> inventoryList) {
+    //     foreach (var inventoryItem in inventoryList) {
+    //         Debug.Log("Item description: " + Instance.GetItemDetail(inventoryItem.itemCode).itemDescription + " Item quantity: " + inventoryItem.itemQuantity);
+    //     }
+    //     Debug.Log("*********************************************************************");
+    // }
 
     public ItemDetails GetItemDetail(int itemCode) {
         ItemDetails item;

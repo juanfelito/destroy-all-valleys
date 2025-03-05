@@ -7,6 +7,7 @@ using UnityEngine;
 public class InventoryBar : MonoBehaviour {
     [SerializeField] private Sprite blank16x16Sprite = null;
     [SerializeField] private InventorySlot[] slots = null;
+    public GameObject draggedItem;
 
     private RectTransform rectTransform;
     private bool _isInventoryBarPositionBottom = true;

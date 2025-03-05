@@ -29,12 +29,13 @@ public class Player : SingletonMonoBehaviour<Player>
     {
         #region Player Input
 
-        ResetAnimationTriggers();
-        PlayerMovementInput();
-        PlayerWalkInput();
+        if (!PlayerInputIsDisabled) {
+            ResetAnimationTriggers();
+            PlayerMovementInput();
+            PlayerWalkInput();
 
-        EventHandler.CallMovementEvent(movementParameters);
-        // print(movementParameters.isCarrying);
+            EventHandler.CallMovementEvent(movementParameters);
+        }
         #endregion
     }
 
@@ -102,6 +103,27 @@ public class Player : SingletonMonoBehaviour<Player>
             movementSpeed = Settings.walkingSpeed;
         }
     }
+
+    public void DisablePlayerInputAndResetMovement() {
+        DisablePlayerInput();
+
+        movementParameters.inputX = 0f;
+        movementParameters.inputY = 0f;
+        movementParameters.isRunning = false;
+        movementParameters.isWalking = false;
+        movementParameters.isIdle = true;
+
+        EventHandler.CallMovementEvent(movementParameters);
+    }
+
+    public void EnablePlayerInput() {
+        PlayerInputIsDisabled = false;
+    }
+
+    public void DisablePlayerInput() {
+        PlayerInputIsDisabled = true;
+    }
+
 
     public Vector3 GetPlayerViewportPosition() {
         return mainCamera.WorldToViewportPoint(transform.position);
