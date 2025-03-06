@@ -257,6 +257,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 508769711}
     m_Modifications:
     - target: {fileID: 395447017211873178, guid: c623a29bc14e04844896e54c33047192, type: 3}
+      propertyPath: slotNumber
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 395447017211873178, guid: c623a29bc14e04844896e54c33047192, type: 3}
       propertyPath: inventoryBar
       value: 
       objectReference: {fileID: 508769714}
@@ -362,6 +366,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 508769711}
     m_Modifications:
+    - target: {fileID: 395447017211873178, guid: c623a29bc14e04844896e54c33047192, type: 3}
+      propertyPath: slotNumber
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 395447017211873178, guid: c623a29bc14e04844896e54c33047192, type: 3}
       propertyPath: inventoryBar
       value: 
@@ -954,6 +962,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 508769711}
     m_Modifications:
     - target: {fileID: 395447017211873178, guid: c623a29bc14e04844896e54c33047192, type: 3}
+      propertyPath: slotNumber
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 395447017211873178, guid: c623a29bc14e04844896e54c33047192, type: 3}
       propertyPath: inventoryBar
       value: 
       objectReference: {fileID: 508769714}
@@ -1144,6 +1156,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 508769711}
     m_Modifications:
     - target: {fileID: 395447017211873178, guid: c623a29bc14e04844896e54c33047192, type: 3}
+      propertyPath: slotNumber
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 395447017211873178, guid: c623a29bc14e04844896e54c33047192, type: 3}
       propertyPath: inventoryBar
       value: 
       objectReference: {fileID: 508769714}
@@ -1260,6 +1276,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 508769711}
     m_Modifications:
+    - target: {fileID: 395447017211873178, guid: c623a29bc14e04844896e54c33047192, type: 3}
+      propertyPath: slotNumber
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 395447017211873178, guid: c623a29bc14e04844896e54c33047192, type: 3}
       propertyPath: inventoryBar
       value: 
@@ -1469,6 +1489,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 508769711}
     m_Modifications:
     - target: {fileID: 395447017211873178, guid: c623a29bc14e04844896e54c33047192, type: 3}
+      propertyPath: slotNumber
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 395447017211873178, guid: c623a29bc14e04844896e54c33047192, type: 3}
       propertyPath: inventoryBar
       value: 
       objectReference: {fileID: 508769714}
@@ -1569,6 +1593,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 508769711}
     m_Modifications:
+    - target: {fileID: 395447017211873178, guid: c623a29bc14e04844896e54c33047192, type: 3}
+      propertyPath: slotNumber
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 395447017211873178, guid: c623a29bc14e04844896e54c33047192, type: 3}
       propertyPath: inventoryBar
       value: 
@@ -1675,6 +1703,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 508769711}
     m_Modifications:
+    - target: {fileID: 395447017211873178, guid: c623a29bc14e04844896e54c33047192, type: 3}
+      propertyPath: slotNumber
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 395447017211873178, guid: c623a29bc14e04844896e54c33047192, type: 3}
       propertyPath: inventoryBar
       value: 
@@ -1830,6 +1862,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 508769711}
     m_Modifications:
+    - target: {fileID: 395447017211873178, guid: c623a29bc14e04844896e54c33047192, type: 3}
+      propertyPath: slotNumber
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 395447017211873178, guid: c623a29bc14e04844896e54c33047192, type: 3}
       propertyPath: inventoryBar
       value: 
@@ -2016,6 +2052,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 508769711}
     m_Modifications:
     - target: {fileID: 395447017211873178, guid: c623a29bc14e04844896e54c33047192, type: 3}
+      propertyPath: slotNumber
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 395447017211873178, guid: c623a29bc14e04844896e54c33047192, type: 3}
       propertyPath: inventoryBar
       value: 
       objectReference: {fileID: 508769714}
@@ -2143,6 +2183,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 508769711}
     m_Modifications:
+    - target: {fileID: 395447017211873178, guid: c623a29bc14e04844896e54c33047192, type: 3}
+      propertyPath: slotNumber
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 395447017211873178, guid: c623a29bc14e04844896e54c33047192, type: 3}
       propertyPath: inventoryBar
       value: 

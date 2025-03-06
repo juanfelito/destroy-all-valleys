@@ -1,5 +1,4 @@
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -18,6 +17,7 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
     [SerializeField] private InventoryBar inventoryBar = null;
     [SerializeField] private GameObject itemPrefab = null;
+    [SerializeField] private int slotNumber;
 
     private void Start() {
         mainCamera = Camera.main;
@@ -60,6 +60,8 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
             if (eventData.pointerCurrentRaycast.gameObject != null && eventData.pointerCurrentRaycast.gameObject.GetComponent<InventorySlot>() != null) {
                 // Swap item in the inventory bar
+                InventorySlot target = eventData.pointerCurrentRaycast.gameObject.GetComponent<InventorySlot>();
+                InventoryManager.Instance.SwapItems(InventoryLocation.player, slotNumber, target.slotNumber);
             } else {
                 if (itemDetails.canBeDropped) {
                     DropSelectedItemAtMousePosition();

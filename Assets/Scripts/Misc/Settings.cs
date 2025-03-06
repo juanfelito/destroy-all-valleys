@@ -8,7 +8,8 @@ public static class Settings
     public const float targetAlpha = 0.45f;
 
     // Player movement
-    public const float runningSpeed = 5.333f;
+    // public const float runningSpeed = 5.333f;
+    public const float runningSpeed = 15f;
     public const float walkingSpeed = 2.666f;
 
     // Inventory

@@ -95,6 +95,20 @@ public class InventoryManager : SingletonMonoBehaviour<InventoryManager> {
         EventHandler.CallInventoryUpdatedEvent(inventoryLocation, inventoryList);
     }
 
+    public void SwapItems(InventoryLocation inventoryLocation, int from, int to) {
+        List<InventoryItem> inventoryList = inventoryLists[(int)inventoryLocation];
+        if (from < inventoryList.Count && to < inventoryList.Count && from != to) {
+            InventoryItem item1 = inventoryList[from];
+            InventoryItem item2 = inventoryList[to];
+
+            inventoryList[from] = item2;
+            inventoryList[to] = item1;
+
+            EventHandler.CallInventoryUpdatedEvent(inventoryLocation, inventoryList);
+        }
+
+    }
+
     // private void DebugPrintInventoryList(List<InventoryItem> inventoryList) {
     //     foreach (var inventoryItem in inventoryList) {
     //         Debug.Log("Item description: " + Instance.GetItemDetail(inventoryItem.itemCode).itemDescription + " Item quantity: " + inventoryItem.itemQuantity);
