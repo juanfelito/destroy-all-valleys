@@ -153,8 +153,7 @@ MonoBehaviour:
   - itemCode: 10011
     itemType: 0
     itemDescription: Blue Spruce Tree Stump
-    itemSprite: {fileID: -341119608263849502, guid: 5d22327a2a3d2a049a8a59a708d527fe,
-      type: 3}
+    itemSprite: {fileID: -341119608263849502, guid: 5d22327a2a3d2a049a8a59a708d527fe, type: 3}
     itemLongDescription: The stump of a spruce tree
     itemUseGridRadius: 0
     itemUseRadius: 0
@@ -225,7 +224,7 @@ MonoBehaviour:
     canBeCarried: 0
   - itemCode: 10017
     itemType: 6
-    itemDescription: A Basic Scythe For Reaping
+    itemDescription: Basic Scythe
     itemSprite: {fileID: 21300506, guid: 853ac38383c680342ac7e688bf29b197, type: 3}
     itemLongDescription: A sharp, basic scythe - great for cutting grass
     itemUseGridRadius: 0
