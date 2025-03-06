@@ -333,3 +333,5 @@ MonoBehaviour:
   itemQuantity: 0
   inventoryBar: {fileID: 0}
   itemPrefab: {fileID: 6456625680823314478, guid: f4d3d44a9d1ff432a8f0a893d3e25895, type: 3}
+  textBoxPrefab: {fileID: 1314467996262122955, guid: 0aafea77721f84b7abf4c78703045f95, type: 3}
+  slotNumber: 0

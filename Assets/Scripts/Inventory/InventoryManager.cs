@@ -120,4 +120,23 @@ public class InventoryManager : SingletonMonoBehaviour<InventoryManager> {
         ItemDetails item;
         if (itemDetailsMap.TryGetValue(itemCode, out item)) { return item; } else { return null; }
     }
+
+    public string GetItemTypeDescription(ItemType itemType) {
+        switch (itemType){
+            case ItemType.Breaking_tool:
+                return Settings.BreakingTool;
+            case ItemType.Chopping_tool:
+                return Settings.ChoppingTool;
+            case ItemType.Hoeing_tool:
+                return Settings.HoeingTool;
+            case ItemType.Watering_tool:
+                return Settings.WateringTool;
+            case ItemType.Collecting_tool:
+                return Settings.CollectingTool;
+            case ItemType.Reaping_tool:
+                return Settings.ReapingTool;
+            default:
+                return itemType.ToString();
+        }
+    }
 }

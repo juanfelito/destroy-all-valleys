@@ -1,12 +1,10 @@
 using System.Collections.Generic;
-using System.Linq;
-using Microsoft.Unity.VisualStudio.Editor;
-using TMPro;
 using UnityEngine;
 
 public class InventoryBar : MonoBehaviour {
     [SerializeField] private Sprite blank16x16Sprite = null;
     [SerializeField] private InventorySlot[] slots = null;
+    [HideInInspector] public GameObject TextBoxGameObject = null;
     public GameObject draggedItem;
 
     private RectTransform rectTransform;
