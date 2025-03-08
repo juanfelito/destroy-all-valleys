@@ -5,6 +5,7 @@ public class InventoryManager : SingletonMonoBehaviour<InventoryManager> {
     private Dictionary<int, ItemDetails> itemDetailsMap;
     public List<InventoryItem>[] inventoryLists;
     [HideInInspector] public int[] inventoryListCapacity;
+    public int[] selectedItem;
 
     [SerializeField]
     private SO_ItemList itemList = null;
@@ -38,6 +39,11 @@ public class InventoryManager : SingletonMonoBehaviour<InventoryManager> {
         inventoryListCapacity = new int[(int)InventoryLocation.count];
 
         inventoryListCapacity[(int)InventoryLocation.player] = Settings.playerInitialInventoryCapacity;
+
+        selectedItem = new int[(int)InventoryLocation.count];
+        for (int i = 0; i < selectedItem.Length; i++) {
+            selectedItem[i] = -1;
+        }
     }
 
     /// <summary>
@@ -138,5 +144,13 @@ public class InventoryManager : SingletonMonoBehaviour<InventoryManager> {
             default:
                 return itemType.ToString();
         }
+    }
+
+    public void SetSelectedItem(InventoryLocation inventoryLocation, int itemCode) {
+        selectedItem[(int)inventoryLocation] = itemCode;
+    }
+
+    public void ClearSelectedItem(InventoryLocation inventoryLocation) {
+        selectedItem[(int)inventoryLocation] = -1;
     }
 }

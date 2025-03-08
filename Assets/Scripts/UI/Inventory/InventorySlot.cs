@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerEnterHandler, IPointerExitHandler {
+public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler {
     private Camera mainCamera;
     private Canvas parentCanvas;
     private Transform parentItem;
@@ -20,6 +20,7 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     [SerializeField] private GameObject itemPrefab = null;
     [SerializeField] private GameObject textBoxPrefab = null;
     [SerializeField] private int slotNumber;
+    [HideInInspector] public bool isSelected = false;
 
     private void Awake() {
         parentCanvas = GetComponentInParent<Canvas>();
@@ -40,6 +41,10 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
             item.ItemCode = itemDetails.itemCode;
 
             InventoryManager.Instance.RemoveItem(InventoryLocation.player, item.ItemCode);
+
+            if (itemQuantity == 0 && isSelected) {
+                ToggleSelected();
+            }
         }
     }
 
@@ -68,6 +73,13 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
                 // Swap item in the inventory bar
                 InventorySlot target = eventData.pointerCurrentRaycast.gameObject.GetComponent<InventorySlot>();
                 InventoryManager.Instance.SwapItems(InventoryLocation.player, slotNumber, target.slotNumber);
+
+                if (isSelected) {
+                    ToggleSelected();
+                    target.ToggleSelected();
+                } else if (target.isSelected) {
+                    InventoryManager.Instance.SetSelectedItem(InventoryLocation.player, target.itemDetails.itemCode);
+                }
             } else {
                 if (itemDetails.canBeDropped) {
                     DropSelectedItemAtMousePosition();
@@ -107,6 +119,25 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     private void DestroyTextBox() {
         if (inventoryBar.TextBoxGameObject != null) {
             Destroy(inventoryBar.TextBoxGameObject);
+        }
+    }
+
+    public void ToggleSelected() {
+        if (isSelected) {
+            highlight.color = new Color(1f, 1f, 1f, 0);
+            InventoryManager.Instance.ClearSelectedItem(InventoryLocation.player);
+        } else if (itemQuantity > 0){
+            inventoryBar.ClearItemHighlights();
+            highlight.color = new Color(1f, 1f, 1f, 255);
+            InventoryManager.Instance.SetSelectedItem(InventoryLocation.player, itemDetails.itemCode);
+        }
+
+        isSelected = !isSelected;
+    }
+
+    public void OnPointerClick(PointerEventData eventData) {
+        if (eventData.button == PointerEventData.InputButton.Left) {
+            ToggleSelected();
         }
     }
 }

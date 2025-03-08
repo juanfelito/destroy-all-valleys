@@ -46,6 +46,13 @@ public class InventoryBar : MonoBehaviour {
         }
     }
 
+    public void ClearItemHighlights() {
+        for (int i = 0; i < slots.Length; i++) {
+            slots[i].highlight.color = new Color(1f, 1f, 1f, 0);
+            slots[i].isSelected = false;
+        }
+    }
+
     private void SwitchInventoryBarPosition() {
         Vector3 playerViewportPosition = Player.Instance.GetPlayerViewportPosition();
 
