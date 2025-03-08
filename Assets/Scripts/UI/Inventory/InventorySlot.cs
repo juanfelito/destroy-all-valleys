@@ -40,11 +40,11 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
             item.ItemCode = itemDetails.itemCode;
 
-            InventoryManager.Instance.RemoveItem(InventoryLocation.player, item.ItemCode);
-
-            if (itemQuantity == 0 && isSelected) {
+            if (itemQuantity == 1 && isSelected) {
                 ToggleSelected();
             }
+
+            InventoryManager.Instance.RemoveItem(InventoryLocation.player, item.ItemCode);
         }
     }
 
@@ -79,6 +79,7 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
                     target.ToggleSelected();
                 } else if (target.isSelected) {
                     InventoryManager.Instance.SetSelectedItem(InventoryLocation.player, target.itemDetails.itemCode);
+                    ShowSelectedItem(target.itemDetails);
                 }
             } else {
                 if (itemDetails.canBeDropped) {
@@ -122,14 +123,24 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         }
     }
 
+    private void ShowSelectedItem(ItemDetails itemDetails) {
+        if (itemDetails.canBeCarried) {
+            Player.Instance.ShowCarriedItem(itemDetails.itemCode);
+        } else {
+            Player.Instance.ClearCarriedItem();
+        }
+    }
+
     public void ToggleSelected() {
         if (isSelected) {
             highlight.color = new Color(1f, 1f, 1f, 0);
             InventoryManager.Instance.ClearSelectedItem(InventoryLocation.player);
+            Player.Instance.ClearCarriedItem();
         } else if (itemQuantity > 0){
             inventoryBar.ClearItemHighlights();
             highlight.color = new Color(1f, 1f, 1f, 255);
             InventoryManager.Instance.SetSelectedItem(InventoryLocation.player, itemDetails.itemCode);
+            ShowSelectedItem(itemDetails);
         }
 
         isSelected = !isSelected;
