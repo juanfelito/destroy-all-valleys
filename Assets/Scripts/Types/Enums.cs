@@ -97,3 +97,20 @@ public enum InventoryLocation {
     chest,
     count
 }
+
+public enum Season {
+    Spring,
+    Summer,
+    Autumn,
+    Winter
+}
+
+public enum DayOfTheWeek {
+    Sun,
+    Mon,
+    Tue,
+    Wed,
+    Thu,
+    Fri,
+    Sat
+}

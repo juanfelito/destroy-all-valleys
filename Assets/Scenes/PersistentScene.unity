@@ -859,10 +859,10 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.19527236
+    x: 0
     y: 0
-    width: 0.62121737
-    height: 0.3480041
+    width: 1
+    height: 1
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 34
@@ -1887,6 +1887,50 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2c9e4440e2784b7383e49c740c4361f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1139398867
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1139398869}
+  - component: {fileID: 1139398868}
+  m_Layer: 0
+  m_Name: TimeManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1139398868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1139398867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3664af5f0f58f47538075bc83851d565, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1139398869
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1139398867}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1258042574 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 395447017211873178, guid: c623a29bc14e04844896e54c33047192, type: 3}
@@ -3538,5 +3582,6 @@ SceneRoots:
   - {fileID: 73790941}
   - {fileID: 3435578785433755122}
   - {fileID: 1519617300}
+  - {fileID: 1139398869}
   - {fileID: 465388991}
   - {fileID: 410447883}

@@ -1,5 +1,6 @@
-public struct MovementParameters
-{
+using NUnit.Framework.Internal;
+
+public struct MovementParameters {
     public float inputX;
     public float inputY;
     public bool isWalking;
@@ -27,4 +28,14 @@ public struct MovementParameters
     public bool idleDown;
     public bool idleLeft;
     public bool idleRight;
+}
+
+public struct Date {
+    public int year;
+    public Season season;
+    public int day;
+    public DayOfTheWeek dayOfWeek;
+    public int hour;
+    public int minute;
+    public int second;
 }

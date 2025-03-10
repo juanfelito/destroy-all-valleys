@@ -8,8 +8,8 @@ public static class Settings
     public const float targetAlpha = 0.45f;
 
     // Player movement
-    // public const float runningSpeed = 5.333f;
-    public const float runningSpeed = 15f;
+    public const float runningSpeed = 5.333f;
+    // public const float runningSpeed = 15f;
     public const float walkingSpeed = 2.666f;
 
     // Inventory
@@ -53,6 +53,9 @@ public static class Settings
     public const string ReapingTool = "Scythe";
     public const string WateringTool = "Watering Can";
     public const string CollectingTool = "Basket";
+
+    // Time system
+    public const float secondsPerGameSecond = 0.012f; // 83 seconds in game per real second; make 0.0166667 for one in-game minute per real second
 
     // Constructor
     static Settings()

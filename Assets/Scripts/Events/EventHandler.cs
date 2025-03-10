@@ -23,4 +23,51 @@ public static class EventHandler {
             InventoryUpdatedEvent(inventoryLocation, inventoryList);
         }
     }
+
+    // Time events
+
+    // Advance game minute
+    public static event Action<Date> AdvanceGameMinuteEvent;
+
+    public static void CallAdvanceGameMinuteEvent(Date date) {
+        if (AdvanceGameMinuteEvent != null) {
+            AdvanceGameMinuteEvent(date);
+        }
+    }
+
+    // Advance game hour
+    public static event Action<Date> AdvanceGameHourEvent;
+
+    public static void CallAdvanceGameHourEvent(Date date) {
+        if (AdvanceGameHourEvent != null) {
+            AdvanceGameHourEvent(date);
+        }
+    }
+
+    // Advance game day
+    public static event Action<Date> AdvanceGameDayEvent;
+
+    public static void CallAdvanceGameDayEvent(Date date) {
+        if (AdvanceGameDayEvent != null) {
+            AdvanceGameDayEvent(date);
+        }
+    }
+
+    // Advance game season
+    public static event Action<Date> AdvanceGameSeasonEvent;
+
+    public static void CallAdvanceGameSeasonEvent(Date date) {
+        if (AdvanceGameSeasonEvent != null) {
+            AdvanceGameSeasonEvent(date);
+        }
+    }
+
+    // Advance game year
+    public static event Action<Date> AdvanceGameYearEvent;
+
+    public static void CallAdvanceGameYearEvent(Date date) {
+        if (AdvanceGameYearEvent != null) {
+            AdvanceGameYearEvent(date);
+        }
+    }
 }
