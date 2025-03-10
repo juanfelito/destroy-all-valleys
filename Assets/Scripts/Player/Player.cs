@@ -47,6 +47,7 @@ public class Player : SingletonMonoBehaviour<Player> {
             ResetAnimationTriggers();
             PlayerMovementInput();
             PlayerWalkInput();
+            PlayerTestInput();
 
             EventHandler.CallMovementEvent(movementParameters);
         }
@@ -100,14 +101,23 @@ public class Player : SingletonMonoBehaviour<Player> {
         }
     }
 
-    private void PlayerWalkInput()
-    {
+    private void PlayerWalkInput() {
         if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
         {
             movementParameters.isRunning = false;
             movementParameters.isWalking = true;
 
             movementSpeed = Settings.walkingSpeed;
+        }
+    }
+
+    private void PlayerTestInput() {
+        if (Input.GetKey(KeyCode.T)) {
+            TimeManager.Instance.TestAdvanceGameMinute();
+        }
+
+        if (Input.GetKeyDown(KeyCode.G)) {
+            TimeManager.Instance.TestAdvanceGameDay();
         }
     }
 

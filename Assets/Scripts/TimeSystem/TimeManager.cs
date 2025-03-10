@@ -61,6 +61,8 @@ public class TimeManager : SingletonMonoBehaviour<TimeManager> {
                             date.season = Season.Spring;
                             date.year++;
 
+                            if (date.year > 9999) { date.year = 1; }
+
                             EventHandler.CallAdvanceGameYearEvent(date);
                         }
 
@@ -71,16 +73,36 @@ public class TimeManager : SingletonMonoBehaviour<TimeManager> {
                 EventHandler.CallAdvanceGameHourEvent(date);
             }
             EventHandler.CallAdvanceGameMinuteEvent(date);
-
-            Debug.Log("Year: " + date.year + " Season: " + date.season.ToString() + " Day: " + date.dayOfWeek.ToString() + ", " + date.day + " Hour: " + date.hour + " Minute: " + date.minute);
         }
     }
 
     private DayOfTheWeek GetDayOfWeek() {
-        int totalDays = (((int)date.season) * 30) + date.day; // doesn't work for years
+        int totalDays = (((int)date.season) * 30) + date.day + (120 * (date.year - 1));
 
         int dayOfWeek = totalDays % 7;
 
         return (DayOfTheWeek)dayOfWeek;
+    }
+
+    //TODO:Remove
+    /// <summary>
+    /// Advance 1 game minute
+    /// </summary>
+    public void TestAdvanceGameMinute() {
+        for (int i = 0; i < 60; i++)
+        {
+            UpdateGameSecond();
+        }
+    }
+
+    //TODO:Remove
+    /// <summary>
+    /// Advance 1 day
+    /// </summary>
+    public void TestAdvanceGameDay() {
+        for (int i = 0; i < 86400; i++)
+        {
+            UpdateGameSecond();
+        }
     }
 } 
