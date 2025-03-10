@@ -114,3 +114,9 @@ public enum DayOfTheWeek {
     Fri,
     Sat
 }
+
+public enum SceneName {
+    Farm,
+    Field,
+    Cabin
+}

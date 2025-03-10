@@ -70,4 +70,33 @@ public static class EventHandler {
             AdvanceGameYearEvent(date);
         }
     }
+
+    // Scene events
+    public static event Action BeforeSceneUnloadFadeOutEvent;
+    public static void CallBeforeSceneUnloadFadeOutEvent() {
+        if (BeforeSceneUnloadFadeOutEvent != null) {
+            BeforeSceneUnloadFadeOutEvent();
+        }
+    }
+
+    public static event Action BeforeSceneUnloadEvent;
+    public static void CallBeforeSceneUnloadEvent() {
+        if (BeforeSceneUnloadEvent != null) {
+            BeforeSceneUnloadEvent();
+        }
+    }
+
+    public static event Action AfterSceneLoadedEvent;
+    public static void CallAfterSceneLoadedEvent() {
+        if (AfterSceneLoadedEvent != null) {
+            AfterSceneLoadedEvent();
+        }
+    }
+
+    public static event Action AfterSceneLoadFadeInEvent;
+    public static void CallAfterSceneLoadFadeInEvent() {
+        if (AfterSceneLoadFadeInEvent != null) {
+            AfterSceneLoadFadeInEvent();
+        }
+    }
 }

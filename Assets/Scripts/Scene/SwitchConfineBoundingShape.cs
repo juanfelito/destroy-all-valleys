@@ -2,8 +2,12 @@ using Unity.Cinemachine;
 using UnityEngine;
 
 public class CameraConfiner : MonoBehaviour {
-    void Start() {
-        SwitchBoundingShape();
+    private void OnEnable() {
+        EventHandler.AfterSceneLoadedEvent += SwitchBoundingShape;
+    }
+
+    private void OnDisable() {
+        EventHandler.AfterSceneLoadedEvent -= SwitchBoundingShape;
     }
 
     /// <summary>

@@ -114,10 +114,12 @@ public class Player : SingletonMonoBehaviour<Player> {
     private void PlayerTestInput() {
         if (Input.GetKey(KeyCode.T)) {
             TimeManager.Instance.TestAdvanceGameMinute();
+            // EventHandler.CallBeforeSceneUnloadFadeOutEvent();
         }
 
         if (Input.GetKeyDown(KeyCode.G)) {
             TimeManager.Instance.TestAdvanceGameDay();
+            SceneControllerManager.Instance.FadeAndLoadScene("Farm", transform.position);
         }
     }
 

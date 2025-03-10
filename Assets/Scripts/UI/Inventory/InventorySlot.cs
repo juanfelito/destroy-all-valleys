@@ -26,8 +26,19 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         parentCanvas = GetComponentInParent<Canvas>();
     }
 
+    private void OnEnable() {
+        EventHandler.AfterSceneLoadedEvent += SceneLoaded;
+    }
+
+    private void OnDisable() {
+        EventHandler.AfterSceneLoadedEvent -= SceneLoaded;
+    }
+
     private void Start() {
-        mainCamera = Camera.main;
+        mainCamera = Camera.main;  
+    }
+
+    private void SceneLoaded() {
         parentItem = GameObject.FindGameObjectWithTag(Tags.ItemsParentTag).transform;
     }
 
