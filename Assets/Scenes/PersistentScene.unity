@@ -998,9 +998,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.11566018
-    width: 1
-    height: 0.76861566
+    y: 0.38587514
+    width: 0.41826087
+    height: 0.27693194
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 34
@@ -2596,7 +2596,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b255322fa288e4c8f9d2ee70d3a4235a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fadeDuration: 1
+  fadeDuration: 0.5
   faderCanvasGroup: {fileID: 1348187827}
   fadeImage: {fileID: 1348187828}
   startingSceneName: 0
