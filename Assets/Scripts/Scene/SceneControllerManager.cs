@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class SceneControllerManager : SingletonMonoBehaviour<SceneControllerManager> {
     private bool isFading;
-    [SerializeField] private float fadeDuration = 1f;
+    [SerializeField] private float fadeDuration = 0.5f;
     [SerializeField] private CanvasGroup faderCanvasGroup = null;
     [SerializeField] private Image fadeImage = null;
     public SceneName startingSceneName;
