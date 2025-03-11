@@ -1,13 +1,13 @@
 using System.Collections;
+using Unity.Cinemachine;
 using Unity.Mathematics;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class SceneControllerManager : SingletonMonoBehaviour<SceneControllerManager> {
     private bool isFading;
-    [SerializeField] private float fadeDuration = 0.5f;
+    [SerializeField] private float fadeDuration = 0.65f;
     [SerializeField] private CanvasGroup faderCanvasGroup = null;
     [SerializeField] private Image fadeImage = null;
     public SceneName startingSceneName;
@@ -41,6 +41,10 @@ public class SceneControllerManager : SingletonMonoBehaviour<SceneControllerMana
 
         yield return StartCoroutine(LoadSceneAndSetActive(sceneName));
         EventHandler.CallAfterSceneLoadedEvent();
+
+        CinemachineCamera vcam = FindFirstObjectByType<CinemachineCamera>();
+        vcam.OnTargetObjectWarped(Player.Instance.transform, spawnPosition - Player.Instance.transform.position);
+        vcam.ForceCameraPosition(spawnPosition, Quaternion.identity);
 
         yield return StartCoroutine(FadeRoutine(0f));
         EventHandler.CallAfterSceneLoadFadeInEvent();

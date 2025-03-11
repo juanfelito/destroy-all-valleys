@@ -6,7 +6,6 @@ public class SceneTeleport : MonoBehaviour {
     [SerializeField] private Vector3 positionGoTo = new Vector3();
 
     private void OnTriggerEnter2D(Collider2D collision) {
-        Debug.Log("collided");
         if (positionGoTo.y == 0) {
             positionGoTo.y = collision.transform.position.y;
         }
