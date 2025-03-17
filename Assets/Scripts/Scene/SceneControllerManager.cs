@@ -21,6 +21,8 @@ public class SceneControllerManager : SingletonMonoBehaviour<SceneControllerMana
 
         EventHandler.CallAfterSceneLoadedEvent();
 
+        SaveLoadManager.Instance.RestoreCurrentSceneData();
+
         StartCoroutine(FadeRoutine(0f));
     }
 
@@ -34,6 +36,8 @@ public class SceneControllerManager : SingletonMonoBehaviour<SceneControllerMana
         EventHandler.CallBeforeSceneUnloadFadeOutEvent();
         yield return StartCoroutine(FadeRoutine(1f));
 
+        SaveLoadManager.Instance.StoreCurrentSceneData();
+
         Player.Instance.transform.position = spawnPosition;
 
         EventHandler.CallBeforeSceneUnloadEvent();
@@ -41,6 +45,8 @@ public class SceneControllerManager : SingletonMonoBehaviour<SceneControllerMana
 
         yield return StartCoroutine(LoadSceneAndSetActive(sceneName));
         EventHandler.CallAfterSceneLoadedEvent();
+
+        SaveLoadManager.Instance.RestoreCurrentSceneData();
 
         CinemachineCamera vcam = FindFirstObjectByType<CinemachineCamera>();
         vcam.OnTargetObjectWarped(Player.Instance.transform, spawnPosition - Player.Instance.transform.position);
