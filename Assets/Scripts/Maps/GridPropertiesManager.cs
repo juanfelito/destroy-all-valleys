@@ -57,6 +57,7 @@ public class GridPropertiesManager : SingletonMonoBehaviour<GridPropertiesManage
 
                 SetGridPropertyDetails(item.coordinate.x, item.coordinate.y, details, dictionary);
             }
+
             SceneSave sceneSave = new SceneSave{
                 gridPropertyDetails = dictionary
             };
@@ -92,30 +93,6 @@ public class GridPropertiesManager : SingletonMonoBehaviour<GridPropertiesManage
         dict[getKey(x,y)] = details;
     }
 
-    private GridPropertyDetails assignDetails(GridPropertyDetails input, GridProperty overwrite) {
-        switch (overwrite.property) {
-            case GridBoolProperty.canDropItem:
-                input.canDropItem = overwrite.value;
-                break;
-            case GridBoolProperty.diggable:
-                input.isDiggable = overwrite.value;
-                break;
-            case GridBoolProperty.canPlaceFurniture:
-                input.canPlaceFurniture = overwrite.value;
-                break;
-            case GridBoolProperty.isPath:
-                input.isPath = overwrite.value;
-                break;
-            case GridBoolProperty.isNPCObstacle:
-                input.isNPCObstable = overwrite.value;
-                break;
-            default:
-                break;
-        }
-
-        return input;
-    }
-
     private void OnEnable() {
         Register();
         EventHandler.AfterSceneLoadedEvent += AfterSceneLoad;
@@ -139,8 +116,6 @@ public class GridPropertiesManager : SingletonMonoBehaviour<GridPropertiesManage
             if (sceneSave.gridPropertyDetails != null) {
                 currentGridProperties = sceneSave.gridPropertyDetails;
             }
-        } else {
-            Debug.Log("Algo terrible pasó");
         }
     }
 
