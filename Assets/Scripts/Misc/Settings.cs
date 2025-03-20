@@ -11,6 +11,8 @@ public static class Settings
     public const float runningSpeed = 5.333f;
     // public const float runningSpeed = 15f;
     public const float walkingSpeed = 2.666f;
+    public const float gridCellSize = 1f; // grid cell size in unity units
+    public const float gridCellDiagonalSize = 1.41f; // diagonal distance between unity cell centres
 
     // Inventory
     public static int playerInitialInventoryCapacity = 24;
