@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.Tilemaps;
 using UnityEngine.UI;
 
 public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler {
@@ -93,7 +94,15 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
                     ShowSelectedItem(target.itemDetails);
                 }
             } else {
-                if (itemDetails.canBeDropped) {
+                Vector3 worldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        
+                // Convert to tilemap cell position
+                Vector3Int cellPosition = GridPropertiesManager.Instance.grid.WorldToCell(worldPosition);
+
+                Debug.Log($"Mouse is over tile at: {cellPosition}");
+                GridPropertyDetails cellDetails = GridPropertiesManager.Instance.GetGridPropertyDetails(cellPosition.x, cellPosition.y);
+
+                if (itemDetails.canBeDropped && cellDetails != null && cellDetails.canDropItem) {
                     DropSelectedItemAtMousePosition();
                 }
             }

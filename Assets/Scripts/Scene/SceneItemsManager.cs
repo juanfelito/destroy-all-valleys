@@ -20,7 +20,7 @@ public class SceneItemsManager : SingletonMonoBehaviour<SceneItemsManager>, ISav
         base.Awake();
 
         _uniqueID = GetComponent<GenerateGUID>().GUID;
-        _gameObjectSave = new  GameObjectSave();
+        _gameObjectSave = new GameObjectSave();
     }
 
     private void OnEnable() {
@@ -42,19 +42,15 @@ public class SceneItemsManager : SingletonMonoBehaviour<SceneItemsManager>, ISav
     }
 
     public void RestoreScene(string sceneName) {
-        Debug.Log("Restoring scene 1");
         if (GameObjectSave.sceneData.TryGetValue(sceneName, out SceneSave sceneSave)) {
-            Debug.Log("Restoring scene 2");
-            if (sceneSave.listSceneItemDictionary != null && sceneSave.listSceneItemDictionary.TryGetValue("sceneItemsList", out List<SceneItem> sceneItems)) {
-                Debug.Log("Restoring scene 3");
+            if (sceneSave.sceneItemsList != null) {
                 DestroySceneItems();
-                InstantiateSceneItems(sceneItems);
+                InstantiateSceneItems(sceneSave.sceneItemsList);
             }
         }
     }
 
     public void StoreScene(string sceneName) {
-        Debug.Log("Storing scene");
         GameObjectSave.sceneData.Remove(sceneName);
 
         List<SceneItem> sceneItems = new List<SceneItem>();
@@ -69,9 +65,8 @@ public class SceneItemsManager : SingletonMonoBehaviour<SceneItemsManager>, ISav
         }
 
         SceneSave sceneSave = new SceneSave{
-            listSceneItemDictionary = new Dictionary<string, List<SceneItem>>()
+            sceneItemsList = sceneItems
         };
-        sceneSave.listSceneItemDictionary.Add("sceneItemsList", sceneItems);
 
         GameObjectSave.sceneData.Add(sceneName, sceneSave);
     }

@@ -47,6 +47,7 @@ GameObject:
   - component: {fileID: 8674353298821323131}
   - component: {fileID: 1647386354333929922}
   - component: {fileID: 5370071096243698527}
+  - component: {fileID: 5005619983708183465}
   m_Layer: 0
   m_Name: CanPlaceFurniture
   m_TagString: Untagged
@@ -159,6 +160,20 @@ TilemapRenderer:
   m_Mode: 0
   m_DetectChunkCullingBounds: 0
   m_MaskInteraction: 0
+--- !u!114 &5005619983708183465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 394454226478813127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3348a607e3477419d81840fd1ff71723, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  so_gridProperties: {fileID: 0}
+  gridBoolProperty: 2
 --- !u!1 &1100799791928998485
 GameObject:
   m_ObjectHideFlags: 0
@@ -170,6 +185,7 @@ GameObject:
   - component: {fileID: 1986477607131912403}
   - component: {fileID: 7367373179623958175}
   - component: {fileID: 7182913310151819839}
+  - component: {fileID: 3366473044066292616}
   m_Layer: 0
   m_Name: Diggable
   m_TagString: Untagged
@@ -282,6 +298,20 @@ TilemapRenderer:
   m_Mode: 0
   m_DetectChunkCullingBounds: 0
   m_MaskInteraction: 0
+--- !u!114 &3366473044066292616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1100799791928998485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3348a607e3477419d81840fd1ff71723, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  so_gridProperties: {fileID: 0}
+  gridBoolProperty: 0
 --- !u!1 &1872331608684776524
 GameObject:
   m_ObjectHideFlags: 0
@@ -839,6 +869,7 @@ GameObject:
   - component: {fileID: 3453712840921484830}
   - component: {fileID: 1684758637883446597}
   - component: {fileID: 5804545209713996652}
+  - component: {fileID: 6204232352885221036}
   m_Layer: 0
   m_Name: NPCObstacle
   m_TagString: Untagged
@@ -951,6 +982,20 @@ TilemapRenderer:
   m_Mode: 0
   m_DetectChunkCullingBounds: 0
   m_MaskInteraction: 0
+--- !u!114 &6204232352885221036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2396261937339201966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3348a607e3477419d81840fd1ff71723, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  so_gridProperties: {fileID: 0}
+  gridBoolProperty: 4
 --- !u!1 &2765898746768522732
 GameObject:
   m_ObjectHideFlags: 0
@@ -1690,6 +1735,7 @@ GameObject:
   - component: {fileID: 5625209689028653238}
   - component: {fileID: 637472710638950286}
   - component: {fileID: 5757929708977174811}
+  - component: {fileID: 2314772930597256729}
   m_Layer: 0
   m_Name: CanDropItem
   m_TagString: Untagged
@@ -1802,6 +1848,20 @@ TilemapRenderer:
   m_Mode: 0
   m_DetectChunkCullingBounds: 0
   m_MaskInteraction: 0
+--- !u!114 &2314772930597256729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4437187240484348024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3348a607e3477419d81840fd1ff71723, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  so_gridProperties: {fileID: 0}
+  gridBoolProperty: 1
 --- !u!1 &5186442744524503372
 GameObject:
   m_ObjectHideFlags: 0
@@ -1813,6 +1873,7 @@ GameObject:
   - component: {fileID: 7953332344862689775}
   - component: {fileID: 309132342259374438}
   - component: {fileID: 2988047337962400968}
+  - component: {fileID: 7813769618855865648}
   m_Layer: 0
   m_Name: Path
   m_TagString: Untagged
@@ -1925,3 +1986,17 @@ TilemapRenderer:
   m_Mode: 0
   m_DetectChunkCullingBounds: 0
   m_MaskInteraction: 0
+--- !u!114 &7813769618855865648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5186442744524503372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3348a607e3477419d81840fd1ff71723, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  so_gridProperties: {fileID: 0}
+  gridBoolProperty: 3

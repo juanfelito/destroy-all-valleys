@@ -120,3 +120,11 @@ public enum SceneName {
     Field,
     Cabin
 }
+
+public enum GridBoolProperty {
+    diggable,
+    canDropItem,
+    canPlaceFurniture,
+    isPath,
+    isNPCObstacle
+}

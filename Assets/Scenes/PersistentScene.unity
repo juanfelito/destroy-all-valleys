@@ -393,6 +393,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 508769711}
     m_Modifications:
     - target: {fileID: 395447017211873178, guid: c623a29bc14e04844896e54c33047192, type: 3}
+      propertyPath: tilemap
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 395447017211873178, guid: c623a29bc14e04844896e54c33047192, type: 3}
       propertyPath: slotNumber
       value: 11
       objectReference: {fileID: 0}
@@ -502,6 +506,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 508769711}
     m_Modifications:
+    - target: {fileID: 395447017211873178, guid: c623a29bc14e04844896e54c33047192, type: 3}
+      propertyPath: tilemap
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 395447017211873178, guid: c623a29bc14e04844896e54c33047192, type: 3}
       propertyPath: slotNumber
       value: 5
@@ -998,9 +1006,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0
-    width: 1
-    height: 1
+    y: 0.38075742
+    width: 0.41127694
+    height: 0.28556806
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 34
@@ -1100,6 +1108,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 508769711}
     m_Modifications:
+    - target: {fileID: 395447017211873178, guid: c623a29bc14e04844896e54c33047192, type: 3}
+      propertyPath: tilemap
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 395447017211873178, guid: c623a29bc14e04844896e54c33047192, type: 3}
       propertyPath: slotNumber
       value: 9
@@ -1391,6 +1403,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 508769711}
     m_Modifications:
     - target: {fileID: 395447017211873178, guid: c623a29bc14e04844896e54c33047192, type: 3}
+      propertyPath: tilemap
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 395447017211873178, guid: c623a29bc14e04844896e54c33047192, type: 3}
       propertyPath: slotNumber
       value: 10
       objectReference: {fileID: 0}
@@ -1581,6 +1597,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 508769711}
     m_Modifications:
+    - target: {fileID: 395447017211873178, guid: c623a29bc14e04844896e54c33047192, type: 3}
+      propertyPath: tilemap
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 395447017211873178, guid: c623a29bc14e04844896e54c33047192, type: 3}
       propertyPath: slotNumber
       value: 2
@@ -1785,6 +1805,69 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!1 &936490347
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 936490350}
+  - component: {fileID: 936490349}
+  - component: {fileID: 936490348}
+  m_Layer: 0
+  m_Name: GridPropertiesManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &936490348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 936490347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b381ce21867c24543af814e590925fda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grid: {fileID: 0}
+  so_GridProperties:
+  - {fileID: 11400000, guid: a014e99b4f28a463bbdd17c6f25b695e, type: 2}
+  - {fileID: 11400000, guid: c807a7128d3c64fd3a299629a1c1f886, type: 2}
+  - {fileID: 11400000, guid: 8735f8423591c479487eee122f710f14, type: 2}
+--- !u!114 &936490349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 936490347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93e71fe3ab9bd4da4a0e010b9397568f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gUID: 7ff8afcf-3a86-4956-90f2-7986658ad85f
+--- !u!4 &936490350
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 936490347}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &955725900
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1793,6 +1876,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 508769711}
     m_Modifications:
+    - target: {fileID: 395447017211873178, guid: c623a29bc14e04844896e54c33047192, type: 3}
+      propertyPath: tilemap
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 395447017211873178, guid: c623a29bc14e04844896e54c33047192, type: 3}
       propertyPath: slotNumber
       value: 1
@@ -1898,6 +1985,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 508769711}
     m_Modifications:
+    - target: {fileID: 395447017211873178, guid: c623a29bc14e04844896e54c33047192, type: 3}
+      propertyPath: tilemap
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 395447017211873178, guid: c623a29bc14e04844896e54c33047192, type: 3}
       propertyPath: slotNumber
       value: 3
@@ -2188,6 +2279,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 508769711}
     m_Modifications:
+    - target: {fileID: 395447017211873178, guid: c623a29bc14e04844896e54c33047192, type: 3}
+      propertyPath: tilemap
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 395447017211873178, guid: c623a29bc14e04844896e54c33047192, type: 3}
       propertyPath: slotNumber
       value: 8
@@ -2800,6 +2895,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 508769711}
     m_Modifications:
     - target: {fileID: 395447017211873178, guid: c623a29bc14e04844896e54c33047192, type: 3}
+      propertyPath: tilemap
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 395447017211873178, guid: c623a29bc14e04844896e54c33047192, type: 3}
       propertyPath: slotNumber
       value: 7
       objectReference: {fileID: 0}
@@ -3049,6 +3148,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 508769711}
     m_Modifications:
     - target: {fileID: 395447017211873178, guid: c623a29bc14e04844896e54c33047192, type: 3}
+      propertyPath: tilemap
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 395447017211873178, guid: c623a29bc14e04844896e54c33047192, type: 3}
       propertyPath: slotNumber
       value: 6
       objectReference: {fileID: 0}
@@ -3180,6 +3283,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 508769711}
     m_Modifications:
+    - target: {fileID: 395447017211873178, guid: c623a29bc14e04844896e54c33047192, type: 3}
+      propertyPath: tilemap
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 395447017211873178, guid: c623a29bc14e04844896e54c33047192, type: 3}
       propertyPath: slotNumber
       value: 4
@@ -3477,6 +3584,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 508769711}
     m_Modifications:
+    - target: {fileID: 395447017211873178, guid: c623a29bc14e04844896e54c33047192, type: 3}
+      propertyPath: tilemap
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 395447017211873178, guid: c623a29bc14e04844896e54c33047192, type: 3}
       propertyPath: inventoryBar
       value: 
@@ -4469,3 +4580,4 @@ SceneRoots:
   - {fileID: 1367419832}
   - {fileID: 1844752561}
   - {fileID: 1062877751}
+  - {fileID: 936490350}
