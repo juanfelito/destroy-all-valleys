@@ -9,6 +9,7 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     private Canvas parentCanvas;
     private Transform parentItem;
     private GameObject draggedItem;
+    private GridCursor gridCursor;
 
     public Image highlight;
     public Image image;
@@ -36,7 +37,8 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     }
 
     private void Start() {
-        mainCamera = Camera.main;  
+        mainCamera = Camera.main;
+        gridCursor = FindFirstObjectByType<GridCursor>();
     }
 
     private void SceneLoaded() {
@@ -68,6 +70,10 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
             Image draggedImage = draggedItem.GetComponentInChildren<Image>();
             draggedImage.sprite = image.sprite;
+
+            gridCursor.EnableCursor();
+            gridCursor.SelectedItemType = itemDetails.itemType;
+            gridCursor.ItemUseGridRadius = itemDetails.itemUseGridRadius;
         }
     }
 
@@ -80,6 +86,10 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     public void OnEndDrag(PointerEventData eventData) {
         if (draggedItem != null) {
             Destroy(draggedItem);
+
+            gridCursor.DisableCursor();
+            gridCursor.SelectedItemType = ItemType.none;
+            gridCursor.ItemUseGridRadius = 0;
 
             if (eventData.pointerCurrentRaycast.gameObject != null && eventData.pointerCurrentRaycast.gameObject.GetComponent<InventorySlot>() != null) {
                 // Swap item in the inventory bar
@@ -94,15 +104,7 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
                     ShowSelectedItem(target.itemDetails);
                 }
             } else {
-                Vector3 worldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        
-                // Convert to tilemap cell position
-                Vector3Int cellPosition = GridPropertiesManager.Instance.grid.WorldToCell(worldPosition);
-
-                Debug.Log($"Mouse is over tile at: {cellPosition}");
-                GridPropertyDetails cellDetails = GridPropertiesManager.Instance.GetGridPropertyDetails(cellPosition.x, cellPosition.y);
-
-                if (itemDetails.canBeDropped && cellDetails != null && cellDetails.canDropItem) {
+                if (itemDetails.canBeDropped && gridCursor.CursorPositionIsValid) {
                     DropSelectedItemAtMousePosition();
                 }
             }

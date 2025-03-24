@@ -127,6 +127,20 @@ public class InventoryManager : SingletonMonoBehaviour<InventoryManager> {
         if (itemDetailsMap.TryGetValue(itemCode, out item)) { return item; } else { return null; }
     }
 
+    public ItemDetails GetSelectedItemDetails(InventoryLocation location) {
+        int itemCode = GetSelectedInventoryItem(location);
+
+        if (itemCode == -1) {
+            return null;
+        }
+
+        return GetItemDetail(itemCode);
+    }
+
+    public int GetSelectedInventoryItem(InventoryLocation location) {
+        return selectedItem[(int) location];
+    }
+
     public string GetItemTypeDescription(ItemType itemType) {
         switch (itemType){
             case ItemType.Breaking_tool:
